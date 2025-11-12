@@ -33,7 +33,7 @@ public:
 	// Removal
 	bool removeHead();
 	bool removeTail();
-	void Clear();
+	void clear();
 
 	// Operators
 	LinkedList<T>& operator=(LinkedList<T>&& other) noexcept;
@@ -131,7 +131,7 @@ bool LinkedList<T>::removeTail() {
 }
 
 template<typename T>
-void LinkedList<T>::Clear() {
+void LinkedList<T>::clear() {
 	Node<T>* temp = head;
 	// while (temp != nullptr) {
 	// 	delete temp;
