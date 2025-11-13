@@ -21,6 +21,16 @@
 int main() {
 
 
+    ABS<int> q;
+    //q.pushFront(1);
+    //q.pushFront(2);
+    q.push(3);
+    //q.print();
+    //std::cout << q.back();
+    //q.front();
+
+
+
     return 0;
 }
 
