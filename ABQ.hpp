@@ -49,6 +49,7 @@ public:
         for (size_t i = 0; i < curr_size_; i++) {
             array_[i] = rhs.array_[i];
         }
+        return *this;
     }
     ABQ(ABQ&& other) noexcept {
         capacity_ = other.capacity_;
