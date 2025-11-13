@@ -126,7 +126,7 @@ public:
 
         T firstElement = array_[0];
         curr_size_--;
-        for (size_t i = 1; i < curr_size_; i++) {
+        for (size_t i = 1; i < curr_size_ + 1; i++) {
             array_[i-1] = array_[i];
         }
         if (curr_size_ <= (capacity_ / 4)) {

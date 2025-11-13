@@ -21,21 +21,20 @@
 int main() {
 
 
-    ABS<int> q;
-    q.push(3);
-    q.push(2);
-    q.push(1);
-    q.push(5);
-    q.push(4);
-    q.push(3);
-    q.push(2);
-    q.push(1);
-    q.push(5);
-    q.push(4);
-    q.push(3);
-    q.push(2);
-    q.push(1);
-    std::cout << q.getMaxCapacity() << std::endl;
+    ABQ<int> q;
+    q.enqueue(1);
+    //std::cout << q.dequeue() << std::endl;
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
+    q.enqueue(6);
+    q.enqueue(7);
+    q.enqueue(8);
+    q.enqueue(9);
+     for (int i = 0; i < 9; i++) {
+         std::cout << q.dequeue() << std::endl;
+     }
     //std::cout << q.peek() << std::endl;
     // ABQ<int> q;
     // q.enqueue(1);
