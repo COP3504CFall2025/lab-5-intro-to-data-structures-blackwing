@@ -120,9 +120,7 @@ public:
         if (curr_size_ == 0) {
             throw std::runtime_error("No elements in the stack");
         }
-        if (curr_size_ <= (capacity_ / 4)) {
-            capacity_ /= 2;
-        }
+
         T lastElement = array_[curr_size_ - 1];
         curr_size_--;
         T* new_array = new T[capacity_];
@@ -132,7 +130,11 @@ public:
 
         delete[] array_;
         array_ = new_array;
+        if (curr_size_ <= (capacity_ / 4)) {
+            capacity_ /= 2;
+        }
         return lastElement;
+
     }
 
 private:
