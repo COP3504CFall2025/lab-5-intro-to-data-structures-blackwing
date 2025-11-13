@@ -6,7 +6,6 @@
 #include <utility>
 #include <iostream>
 
-// Learned how to implement circular buffer from https://www.geeksforgeeks.org/cpp/implement-circular-buffer-using-std-vector-in-cpp/
 template <typename T>
 class ABDQ : public DequeInterface<T> {
 private:
