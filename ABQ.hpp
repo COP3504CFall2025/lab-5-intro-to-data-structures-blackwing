@@ -73,6 +73,8 @@ public:
         rhs.array_ = nullptr;
         rhs.curr_size_ = 0;
         rhs.capacity_ = 0;
+
+        return *this;
     }
     ~ABQ() noexcept override {
         delete[] array_;

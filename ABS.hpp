@@ -68,6 +68,7 @@ public:
         rhs.curr_size_ = 0;
         rhs.capacity_ = 0;
 
+        return *this;
 
     }
     ~ABS() noexcept override {
