@@ -97,7 +97,7 @@ public:
     // Push item onto the stack
     void push(const T& data) override {
         if (curr_size_ == capacity_) {
-            capacity_ *= 2;
+            //capacity_ *= 2;
             T* new_array = new T[capacity_];
             for (size_t i = 0; i < curr_size_; i++) {
                 new_array[i] = array_[i];
@@ -119,6 +119,9 @@ public:
     T pop() override {
         if (curr_size_ == 0) {
             throw std::runtime_error("No elements in the stack");
+        }
+        if (curr_size_ <= (capacity_ / 4)) {
+            capacity_ /= 2;
         }
         T lastElement = array_[curr_size_ - 1];
         curr_size_--;

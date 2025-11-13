@@ -123,6 +123,9 @@ public:
         if (curr_size_ == 0) {
             throw std::runtime_error("No elements in the Queue");
         }
+        if (curr_size_ <= (capacity_ / 4)) {
+            capacity_ /= 2;
+        }
         T firstElement = array_[0];
         curr_size_--;
         for (size_t i = 1; i < curr_size_; i++) {
