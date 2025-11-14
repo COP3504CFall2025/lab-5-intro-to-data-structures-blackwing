@@ -91,11 +91,7 @@ LinkedList<T>::LinkedList(LinkedList<T> &&other) noexcept {
 
 template<typename T>
 LinkedList<T>::~LinkedList() {
-	delete this->head;
-	this->head = nullptr;
-	delete this->tail;
-	this->tail = nullptr;
-	this->count = 0;
+	this->clear();
 }
 
 template<typename T>
