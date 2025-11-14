@@ -50,12 +50,12 @@ public:
     // Element Accessors
     const T& front() const override {
         //return list.getHead()->data;
-        T item = list.getHead()->data;
+        T& item = list.getHead()->data;
         return item;
     }
     const T& back() const override {
         //return list.getTail()->data;
-        T item = list.getTail()->data;
+        T& item = list.getTail()->data;
         return item;
     }
 
