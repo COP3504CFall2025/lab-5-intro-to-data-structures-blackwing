@@ -61,6 +61,8 @@ LinkedList<T>::LinkedList() {
 
 template<typename T>
 LinkedList<T>::LinkedList(const LinkedList<T> &list) {
+	this->head = nullptr;
+	this->tail = nullptr;
 	Node<T>* temp1 = list.head;
 	count = 0;
 	while (temp1 != nullptr) {
@@ -263,7 +265,8 @@ LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &rhs) {
 	}
 
 
-
+	this->head = nullptr;
+	this->tail = nullptr;
 	this->clear();
 	Node<T>* temp1 = rhs.head;
 	count = 0;
