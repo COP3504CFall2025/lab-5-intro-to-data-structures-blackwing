@@ -30,18 +30,19 @@ public:
         list.removeTail();
         return item;
 
-
-
     }
 
     // Access
     T peek() const override {
+        if (list.head == nullptr) {
+            throw std::out_of_range("No elements in the stack");
+        }
         T item = list.getTail()->data;
         return item;
     }
 
     //Getters
     std::size_t getSize() const noexcept override {
-        return list.getCount();
+        return static_cast<std::size_t>(list.getSize());
     }
 };
