@@ -12,29 +12,29 @@ private:
 public:
     // Constructor
     LLS() {
-        list = new LinkedList<T>();
+        list = LinkedList<T>();
     }
 
     // Insertion
     void push(const T& item) override {
-        addTail(item);
+        list.addTail(item);
     }
 
     // Deletion
     T pop() override {
-        T item = list->tail->data;
-        list->removeTail();
+        T item = list.tail->data;
+        list.removeTail();
         return item;
     }
 
     // Access
     T peek() const override {
-        T item = list->tail->data;
+        T item = list.tail->data;
         return item;
     }
 
     //Getters
     std::size_t getSize() const noexcept override {
-        return list->getCount();
+        return list.getCount();
     }
 };
