@@ -91,8 +91,13 @@ void LinkedList<T>::addHead(const T &data) {
 	count++;
 	Node<T>* node1 = new Node<T>();
 	node1->data = data;
-	node1->next = head;
-	head = node1;
+	if (head == nullptr) {
+		head = node1;
+	}
+	else {
+		node1->next = head;
+		head = node1;
+	}
 }
 
 template<typename T>
@@ -100,9 +105,16 @@ void LinkedList<T>::addTail(const T &data) {
 	count++;
 	Node<T>* node2 = new Node<T>();
 	node2->data = data;
+	if (head == nullptr) {
+		head = node2;
+	}
+	else {
+		tail->next = node2;
+		node2->prev = tail;
+		tail = node2;
+		node2->next = nullptr;
+	}
 	//node1->next = tail;
-	node2->prev = tail;
-	tail = node2;
 }
 
 template<typename T>
@@ -119,7 +131,7 @@ bool LinkedList<T>::removeHead() {
 
 template<typename T>
 bool LinkedList<T>::removeTail() {
-	if (tail != nullptr) {
+	if (head != nullptr) {
 		count--;
 		Node<T>* temp = tail;
 		tail = tail->prev;
@@ -137,7 +149,7 @@ void LinkedList<T>::clear() {
 	// 	temp = temp->next;
 	// }
 
-	for (int i = 0; i < count; i++) {
+	for (unsigned int i = 0; i < count; i++) {
 		if (head->next != nullptr) {
 			temp = head->next;
 			delete head;
