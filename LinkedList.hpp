@@ -191,6 +191,12 @@ void LinkedList<T>::clear() {
 			count--;
 		}
 	}
+	if (head != nullptr) {
+		delete head;
+		head = nullptr;
+		tail = nullptr;
+		count = 0;
+	}
 }
 
 template<typename T>
@@ -262,6 +268,7 @@ LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &rhs) {
 	delete this->tail;
 
 
+	this->clear();
 	Node<T>* temp1 = rhs.head;
 	count = 0;
 	while (temp1 != nullptr) {
