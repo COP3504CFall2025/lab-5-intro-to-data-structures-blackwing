@@ -139,6 +139,7 @@ bool LinkedList<T>::removeHead() {
 			delete head;
 			head = nullptr;
 			tail = nullptr;
+			return true;
 		}
 		else {
 			Node<T>* temp = head;
@@ -159,6 +160,7 @@ bool LinkedList<T>::removeTail() {
 			delete head;
 			tail = nullptr;
 			head = nullptr;
+			return true;
 		}
 		else {
 			Node<T>* temp1 = tail;
