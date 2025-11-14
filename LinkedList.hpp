@@ -61,15 +61,20 @@ LinkedList<T>::LinkedList() {
 
 template<typename T>
 LinkedList<T>::LinkedList(const LinkedList<T> &list) {
-	this->head = list.head;
-	this->head->data = list.head->data;
-	this->head->next = list.head->next;
-	this->head->prev = list.head->prev;
-	this->tail = list.tail;
-	this->tail->data = list.tail->data;
-	this->tail->next = list.tail->next;
-	this->tail->prev = list.tail->prev;
-	this->count = list.count;
+	Node<T>* temp1 = list.head;
+	while (temp1 != nullptr) {
+		addTail(temp1->data);
+		temp1 = temp1->next;
+	}
+	// this->head = list.head;
+	// this->head->data = list.head->data;
+	// this->head->next = list.head->next;
+	// this->head->prev = list.head->prev;
+	// this->tail = list.tail;
+	// this->tail->data = list.tail->data;
+	// this->tail->next = list.tail->next;
+	// this->tail->prev = list.tail->prev;
+	// this->count = list.count;
 }
 
 template<typename T>
