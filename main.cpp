@@ -21,19 +21,19 @@
 int main() {
 
 
-    ABDQ<int> q;
-    q.pushBack(1);
-    q.pushBack(2);
-    q.pushBack(3);
-    q.pushBack(4);
-    q.pushBack(5);
-    q.pushBack(6);
-    q.pushBack(7);
-    q.pushFront(8);
-    std::cout << q.getSize() << std::endl;
-    for (size_t i = 0; i < q.getSize(); i++) {
-          std::cout << q.popFront() << std::endl;
-    }
+    LinkedList<int> q;
+    // q.pushBack(1);
+    // q.pushBack(2);
+    // q.pushBack(3);
+    // q.pushBack(4);
+    // q.pushBack(5);
+    // q.pushBack(6);
+    // q.pushBack(7);
+    // q.pushFront(8);
+    // std::cout << q.getSize() << std::endl;
+    // for (size_t i = 0; i < q.getSize(); i++) {
+    //       std::cout << q.popFront() << std::endl;
+    // }
     //std::cout << q.peek() << std::endl;
     // ABQ<int> q;
     // q.enqueue(1);

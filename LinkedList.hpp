@@ -92,6 +92,43 @@ LinkedList<T>::LinkedList(LinkedList<T> &&other) noexcept {
 }
 
 template<typename T>
+LinkedList<T>& LinkedList<T>::operator=(LinkedList<T> &&other) noexcept {
+	if (this == &other) {
+		return *this;
+	}
+
+
+	this->clear();
+
+	this->head = other.head;
+	this->tail = other.tail;
+	this->count = other.count;
+
+	other.head = nullptr;
+	other.tail = nullptr;
+	other.count = 0;
+
+	return *this;
+}
+
+template<typename T>
+LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &rhs) {
+	if (this == &rhs) {
+		return *this;
+	}
+
+
+	this->clear();
+	Node<T>* temp1 = rhs.head;
+	count = 0;
+	while (temp1 != nullptr) {
+		addTail(temp1->data);
+		temp1 = temp1->next;
+	}
+	return *this;
+}
+
+template<typename T>
 LinkedList<T>::~LinkedList() {
 	this->clear();
 }
@@ -177,17 +214,24 @@ bool LinkedList<T>::removeTail() {
 
 template<typename T>
 void LinkedList<T>::clear() {
-	Node<T>* temp = head;
+	Node<T>* temp;
+	if (head != nullptr) {
+		temp = head;
+	}
+
 	// while (temp != nullptr) {
 	// 	delete temp;
 	// 	temp = temp->next;
 	// }
 
 	for (unsigned int i = 0; i < count + 1; i++) {
+		if (head != nullptr) {
 			temp = head->next;
 			delete head;
 			head = temp;
 			count--;
+		}
+
 	}
 	this->head = nullptr;
 	this->tail = nullptr;
@@ -230,43 +274,6 @@ void LinkedList<T>::printReverse() const {
 	for (Node<T>* tempNode = tail; tempNode != nullptr; tempNode = tempNode->prev) {
 		std::cout << tempNode->data << " " << std::endl;
 	}
-}
-
-template<typename T>
-LinkedList<T>& LinkedList<T>::operator=(LinkedList<T> &&other) noexcept {
-	if (this == &other) {
-		return *this;
-	}
-
-
-	this->clear();
-
-	this->head = other.head;
-	this->tail = other.tail;
-	this->count = other.count;
-
-	other.head = nullptr;
-	other.tail = nullptr;
-	other.count = 0;
-
-	return *this;
-}
-
-template<typename T>
-LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &rhs) {
-	if (this == &rhs) {
-		return *this;
-	}
-
-
-	this->clear();
-	Node<T>* temp1 = rhs.head;
-	count = 0;
-	while (temp1 != nullptr) {
-		addTail(temp1->data);
-		temp1 = temp1->next;
-	}
-	return *this;
 }
 
 
