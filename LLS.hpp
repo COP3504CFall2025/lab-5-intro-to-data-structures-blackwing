@@ -22,14 +22,14 @@ public:
 
     // Deletion
     T pop() override {
-        T item = list.tail->data;
+        T item = list.getTail()->data;
         list.removeTail();
         return item;
     }
 
     // Access
     T peek() const override {
-        T item = list.tail->data;
+        T item = list.getTail()->data;
         return item;
     }
 
