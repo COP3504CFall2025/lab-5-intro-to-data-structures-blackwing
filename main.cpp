@@ -21,20 +21,19 @@
 int main() {
 
 
-    ABQ<int> q;
-    q.enqueue(1);
-    //std::cout << q.dequeue() << std::endl;
-    q.enqueue(2);
-    q.enqueue(3);
-    q.enqueue(4);
-    q.enqueue(5);
-    q.enqueue(6);
-    q.enqueue(7);
-    q.enqueue(8);
-    q.enqueue(9);
-     for (int i = 0; i < 9; i++) {
-         std::cout << q.dequeue() << std::endl;
-     }
+    ABDQ<int> q;
+    q.pushBack(1);
+    q.pushBack(2);
+    q.pushBack(3);
+    q.pushBack(4);
+    q.pushBack(5);
+    q.pushBack(6);
+    q.pushBack(7);
+    q.pushFront(8);
+    std::cout << q.getSize() << std::endl;
+    for (size_t i = 0; i < q.getSize(); i++) {
+          std::cout << q.popFront() << std::endl;
+    }
     //std::cout << q.peek() << std::endl;
     // ABQ<int> q;
     // q.enqueue(1);
