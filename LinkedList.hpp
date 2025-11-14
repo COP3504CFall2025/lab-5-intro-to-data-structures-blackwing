@@ -233,6 +233,7 @@ void LinkedList<T>::clear() {
 		}
 
 	}
+	count--;
 	this->head = nullptr;
 	this->tail = nullptr;
 }
