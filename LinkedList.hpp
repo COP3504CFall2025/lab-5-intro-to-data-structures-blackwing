@@ -112,6 +112,7 @@ void LinkedList<T>::addHead(const T &data) {
 		head->prev = node1;
 		head = node1;
 	}
+
 }
 
 template<typename T>
@@ -245,8 +246,8 @@ LinkedList<T>& LinkedList<T>::operator=(LinkedList<T> &&other) noexcept {
 		return *this;
 	}
 
-	delete this->head;
-	delete this->tail;
+
+	this->clear();
 
 	this->head = other.head;
 	this->tail = other.tail;
@@ -265,8 +266,6 @@ LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &rhs) {
 		return *this;
 	}
 
-	delete this->head;
-	delete this->tail;
 
 
 	this->clear();
