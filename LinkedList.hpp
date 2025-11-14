@@ -167,6 +167,7 @@ bool LinkedList<T>::removeTail() {
 		else {
 			Node<T>* temp1 = tail;
 			tail = tail->prev;
+			tail->next = nullptr;
 			delete temp1;
 			count--;
 			return true;
