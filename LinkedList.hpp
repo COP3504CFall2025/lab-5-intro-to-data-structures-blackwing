@@ -97,6 +97,7 @@ void LinkedList<T>::addHead(const T &data) {
 	}
 	else {
 		node1->next = head;
+		head->prev = node1;
 		head = node1;
 	}
 }
@@ -135,9 +136,9 @@ template<typename T>
 bool LinkedList<T>::removeTail() {
 	if (head != nullptr) {
 		count--;
-		Node<T>* temp = tail;
+		Node<T>* temp1 = tail;
 		tail = tail->prev;
-		delete temp;
+		delete temp1;
 		return true;
 	}
 	return false;
