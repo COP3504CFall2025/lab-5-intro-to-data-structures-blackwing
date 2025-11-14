@@ -134,7 +134,6 @@ void LinkedList<T>::addTail(const T &data) {
 template<typename T>
 bool LinkedList<T>::removeHead() {
 	if (head != nullptr) {
-		count--;
 		if (count == 0) {
 			delete head;
 			head = nullptr;
@@ -146,6 +145,7 @@ bool LinkedList<T>::removeHead() {
 			delete temp;
 			return true;
 		}
+		count--;
 	}
 	return false;
 }
@@ -153,7 +153,6 @@ bool LinkedList<T>::removeHead() {
 template<typename T>
 bool LinkedList<T>::removeTail() {
 	if (head != nullptr) {
-		count--;
 		if (count == 0) {
 			delete head;
 			tail = nullptr;
@@ -165,6 +164,7 @@ bool LinkedList<T>::removeTail() {
 			delete temp1;
 			return true;
 		}
+		count--;
 	}
 	return false;
 }
