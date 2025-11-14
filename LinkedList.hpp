@@ -93,6 +93,7 @@ void LinkedList<T>::addHead(const T &data) {
 	node1->data = data;
 	if (head == nullptr) {
 		head = node1;
+		tail = node1;
 	}
 	else {
 		node1->next = head;
@@ -107,6 +108,7 @@ void LinkedList<T>::addTail(const T &data) {
 	node2->data = data;
 	if (head == nullptr) {
 		head = node2;
+		tail = node2;
 	}
 	else {
 		tail->next = node2;
