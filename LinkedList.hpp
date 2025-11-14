@@ -261,7 +261,9 @@ LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &rhs) {
 	delete this->head;
 	delete this->tail;
 
+
 	Node<T>* temp1 = rhs.head;
+	count = 0;
 	while (temp1 != nullptr) {
 		addTail(temp1->data);
 		temp1 = temp1->next;
