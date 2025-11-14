@@ -34,7 +34,7 @@ public:
 
     // Access
     T peek() const override {
-        if (list.head == nullptr) {
+        if (list.getHead() == nullptr) {
             throw std::out_of_range("No elements in the stack");
         }
         T item = list.getTail()->data;
