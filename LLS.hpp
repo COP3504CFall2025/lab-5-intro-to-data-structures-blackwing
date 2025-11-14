@@ -22,9 +22,16 @@ public:
 
     // Deletion
     T pop() override {
-        T item = list.getTail()->data;
-        list.removeTail();
-        return item;
+        if (list.getHead() != nullptr) {
+            T item = list.getTail()->data;
+            list.removeTail();
+            return item;
+        }
+        if (list.getCount() == 0) {
+            throw std::out_of_range("No elements in the stack");
+        }
+
+
     }
 
     // Access
