@@ -43,6 +43,6 @@ public:
 
     //Getters
     std::size_t getSize() const noexcept override {
-        return static_cast<std::size_t>(list.getSize());
+        return static_cast<std::size_t>(list.getCount());
     }
 };
