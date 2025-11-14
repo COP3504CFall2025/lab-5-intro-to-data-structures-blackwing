@@ -164,9 +164,15 @@ public:
 
     // Access
     const T& front() const override {
+        if (size_ == 0) {
+            throw std::runtime_error("No elements in the Deque");
+        }
         return data_[0];
     }
     const T& back() const override {
+        if (size_ == 0) {
+            throw std::runtime_error("No elements in the Deque");
+        }
         return data_[size_ - 1];
     }
 
