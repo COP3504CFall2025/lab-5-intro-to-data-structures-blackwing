@@ -189,6 +189,8 @@ void LinkedList<T>::clear() {
 			head = temp;
 			count--;
 	}
+	this->head = nullptr;
+	this->tail = nullptr;
 }
 
 template<typename T>
