@@ -139,6 +139,7 @@ bool LinkedList<T>::removeHead() {
 			delete head;
 			head = nullptr;
 			tail = nullptr;
+			count--;
 			return true;
 		}
 		else {
@@ -146,9 +147,9 @@ bool LinkedList<T>::removeHead() {
 			head = head->next;
 			head->prev = nullptr;
 			delete temp;
+			count--;
 			return true;
 		}
-		count--;
 	}
 	return false;
 }
@@ -160,15 +161,16 @@ bool LinkedList<T>::removeTail() {
 			delete head;
 			tail = nullptr;
 			head = nullptr;
+			count--;
 			return true;
 		}
 		else {
 			Node<T>* temp1 = tail;
 			tail = tail->prev;
 			delete temp1;
+			count--;
 			return true;
 		}
-		count--;
 	}
 	return false;
 }
