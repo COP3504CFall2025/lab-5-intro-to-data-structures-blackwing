@@ -183,7 +183,7 @@ void LinkedList<T>::clear() {
 	// 	temp = temp->next;
 	// }
 
-	for (unsigned int i = 0; i < count; i++) {
+	for (unsigned int i = 0; i < count + 1; i++) {
 			temp = head->next;
 			delete head;
 			head = temp;
@@ -257,8 +257,6 @@ LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &rhs) {
 	}
 
 
-	this->head = nullptr;
-	this->tail = nullptr;
 	this->clear();
 	Node<T>* temp1 = rhs.head;
 	count = 0;
