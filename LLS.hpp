@@ -23,7 +23,7 @@ public:
     // Deletion
     T pop() override {
         if (list.getHead() == nullptr) {
-            throw std::out_of_range("No elements in the stack");
+            throw std::runtime_error("No elements in the stack");
         }
 
         T item = list.getTail()->data;
@@ -35,7 +35,7 @@ public:
     // Access
     T peek() const override {
         if (list.getHead() == nullptr) {
-            throw std::out_of_range("No elements in the stack");
+            throw std::runtime_error("No elements in the stack");
         }
         T item = list.getTail()->data;
         return item;
