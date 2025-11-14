@@ -29,7 +29,6 @@ public:
         T item = list.getTail()->data;
         list.removeTail();
         return item;
-
     }
 
     // Access

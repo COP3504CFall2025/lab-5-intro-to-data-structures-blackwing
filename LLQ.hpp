@@ -12,29 +12,37 @@ private:
 public:
     // Constructor
     LLQ() {
-        list = new LinkedList<T>();
+        list = LinkedList<T>();
     }
 
     // Insertion
     void enqueue(const T& item) override {
-        list->addTail(item);
+        list.addTail(item);
     }
 
     // Deletion
     T dequeue() override {
-        T item = list->getHead()->data;
-        list->removeHead();
+        if (list.getHead() == nullptr) {
+            throw std::runtime_error("No elements in the stack");
+        }
+
+        T item = list.getHead()->data;
+        list.removeHead();
         return item;
     }
 
     // Access
     T peek() const override {
-        return list->getHead()->data;
+        if (list.getHead() == nullptr) {
+            throw std::runtime_error("No elements in the stack");
+        }
+        T item = list.getHead()->data;
+        return item;
     }
 
     // Getter
     std::size_t getSize() const noexcept override {
-        return list->getCount();
+        return static_cast<std::size_t>(list.getCount());
     }
 
 };

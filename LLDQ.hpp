@@ -16,40 +16,52 @@ private:
 public:
     // Constructor
     LLDQ() {
-        list = new LinkedList<T>();
+        list = LinkedList<T>();
     }
 
     // Core Insertion Operations
     void pushFront(const T& item) override {
-        list->addHead(item);
+        list.addHead(item);
     }
     void pushBack(const T& item) override {
-        list->addTail(item);
+        list.addTail(item);
     }
 
     // Core Removal Operations
     T popFront() override {
-        T value = list->getHead()->data;
-        list->removeHead();
-        return value;
+        if (list.getHead() == nullptr) {
+            throw std::runtime_error("No elements in the stack");
+        }
+
+        T item = list.getHead()->data;
+        list.removeHead();
+        return item;
     }
     T popBack() override {
-        T value = list->getTail()->data;
-        list->removeTail();
-        return value;
+        if (list.getHead() == nullptr) {
+            throw std::runtime_error("No elements in the stack");
+        }
+
+        T item = list.getTail()->data;
+        list.removeTail();
+        return item;
     }
 
     // Element Accessors
     const T& front() const override {
-        return list->getHead()->data;
+        //return list.getHead()->data;
+        T item = list.getHead()->data;
+        return item;
     }
     const T& back() const override {
-        return list->getTail()->data;
+        //return list.getTail()->data;
+        T item = list.getTail()->data;
+        return item;
     }
 
     // Getter
     std::size_t getSize() const noexcept override {
-        return list->getCount();
+        return static_cast<std::size_t>(list.getCount());
     }
 };
 
