@@ -184,18 +184,10 @@ void LinkedList<T>::clear() {
 	// }
 
 	for (unsigned int i = 0; i < count; i++) {
-		if (head->next != nullptr) {
 			temp = head->next;
 			delete head;
 			head = temp;
 			count--;
-		}
-	}
-	if (head != nullptr) {
-		delete head;
-		head = nullptr;
-		tail = nullptr;
-		count = 0;
 	}
 }
 
