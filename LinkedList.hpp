@@ -124,10 +124,16 @@ template<typename T>
 bool LinkedList<T>::removeHead() {
 	if (head != nullptr) {
 		count--;
-		Node<T>* temp = head;
-		head = head->next;
-		delete temp;
-		return true;
+		if (count == 0) {
+			head = nullptr;
+			tail = nullptr;
+		}
+		else {
+			Node<T>* temp = head;
+			head = head->next;
+			delete temp;
+			return true;
+		}
 	}
 	return false;
 }
@@ -136,10 +142,16 @@ template<typename T>
 bool LinkedList<T>::removeTail() {
 	if (head != nullptr) {
 		count--;
-		Node<T>* temp1 = tail;
-		tail = tail->prev;
-		delete temp1;
-		return true;
+		if (count == 0) {
+			tail = nullptr;
+			head = nullptr;
+		}
+		else {
+			Node<T>* temp1 = tail;
+			tail = tail->prev;
+			delete temp1;
+			return true;
+		}
 	}
 	return false;
 }
@@ -157,6 +169,7 @@ void LinkedList<T>::clear() {
 			temp = head->next;
 			delete head;
 			head = temp;
+			count--;
 		}
 	}
 }
