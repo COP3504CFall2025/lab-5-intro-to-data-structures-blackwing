@@ -62,6 +62,7 @@ LinkedList<T>::LinkedList() {
 template<typename T>
 LinkedList<T>::LinkedList(const LinkedList<T> &list) {
 	Node<T>* temp1 = list.head;
+	count = 0;
 	while (temp1 != nullptr) {
 		addTail(temp1->data);
 		temp1 = temp1->next;
