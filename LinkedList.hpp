@@ -62,7 +62,13 @@ LinkedList<T>::LinkedList() {
 template<typename T>
 LinkedList<T>::LinkedList(const LinkedList<T> &list) {
 	this->head = list.head;
+	this->head->data = list.head->data;
+	this->head->next = list.head->next;
+	this->head->prev = list.head->prev;
 	this->tail = list.tail;
+	this->tail->data = list.tail->data;
+	this->tail->next = list.tail->next;
+	this->tail->prev = list.tail->prev;
 	this->count = list.count;
 }
 
@@ -125,6 +131,7 @@ bool LinkedList<T>::removeHead() {
 	if (head != nullptr) {
 		count--;
 		if (count == 0) {
+			delete head;
 			head = nullptr;
 			tail = nullptr;
 		}
@@ -143,6 +150,7 @@ bool LinkedList<T>::removeTail() {
 	if (head != nullptr) {
 		count--;
 		if (count == 0) {
+			delete head;
 			tail = nullptr;
 			head = nullptr;
 		}
