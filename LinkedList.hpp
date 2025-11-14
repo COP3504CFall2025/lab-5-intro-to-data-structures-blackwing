@@ -214,28 +214,29 @@ bool LinkedList<T>::removeTail() {
 
 template<typename T>
 void LinkedList<T>::clear() {
-	Node<T>* temp;
-	if (head != nullptr) {
-		temp = head;
-	}
-
-	// while (temp != nullptr) {
-	// 	delete temp;
-	// 	temp = temp->next;
+	while (removeHead()) {}
+	// Node<T>* temp;
+	// if (head != nullptr) {
+	// 	temp = head;
 	// }
-
-	for (unsigned int i = 0; i < count + 1; i++) {
-		if (head != nullptr) {
-			temp = head->next;
-			delete head;
-			head = temp;
-			count--;
-		}
-
-	}
-	count--;
-	this->head = nullptr;
-	this->tail = nullptr;
+	//
+	// // while (temp != nullptr) {
+	// // 	delete temp;
+	// // 	temp = temp->next;
+	// // }
+	//
+	// for (unsigned int i = 0; i < count + 1; i++) {
+	// 	if (head != nullptr) {
+	// 		temp = head->next;
+	// 		delete head;
+	// 		head = temp;
+	// 		count--;
+	// 	}
+	//
+	// }
+	// count--;
+	// this->head = nullptr;
+	// this->tail = nullptr;
 }
 
 template<typename T>
