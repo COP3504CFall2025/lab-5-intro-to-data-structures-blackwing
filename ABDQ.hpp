@@ -164,10 +164,10 @@ public:
 
     // Access
     const T& front() const override {
-        return this->front_;
+        return data_[0];
     }
     const T& back() const override {
-        return this->back_;
+        return data_[size_ - 1];
     }
 
     // Getters
