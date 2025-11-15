@@ -53,16 +53,14 @@ public:
         if (list.getHead() == nullptr) {
             throw std::runtime_error("No elements in the stack");
         }
-        T item = list.getHead().data;
-        return item;
+        return list.getHead()->data;
     }
     const T& back() const override {
         if (list.getHead() == nullptr) {
             throw std::runtime_error("No elements in the stack");
         }
         //return list.getTail()->data;
-        T item = list.getTail().data;
-        return item;
+        return list.getTail()->data;
     }
 
     // Getter
