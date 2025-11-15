@@ -19,9 +19,8 @@
 */
 
 int main() {
+    LLQ<int> *q
 
-
-    LLS<int> q;
     // q.pushBack(1);
     // q.pushBack(2);
     // q.pushBack(3);
